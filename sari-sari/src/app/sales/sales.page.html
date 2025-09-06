@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Product</ion-label>
+    <ion-select [(ngModel)]="selectedProduct">
+      <ion-select-option *ngFor="let p of products" [value]="p">{{ p.name }} — ₱{{ p.price }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Quantity</ion-label>
+    <ion-input type="number" [(ngModel)]="quantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Payment Mode</ion-label>
+    <ion-select [(ngModel)]="paymentMode">
+      <ion-select-option *ngFor="let m of paymentModes" [value]="m">{{ m }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="addSale()">Record Sale</ion-button>
+
+  <ion-list>
+    <ion-list-header>
+      Recent Sales
+    </ion-list-header>
+    <ion-item *ngFor="let s of sales">
+      <ion-label>
+        <h3>{{ s.productName }} x{{ s.quantity }}</h3>
+        <p>{{ s.date | date:'short' }} — {{ s.total | currency:'PHP' }} — {{ s.paymentMode }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

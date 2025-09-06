@@ -1,0 +1,45 @@
+// Ionic theme variables
+
+$colors: (
+  primary:    #4CAF50,
+  secondary:  #3dc2ff,
+  tertiary:   #5260ff,
+  success:    #2dd36f,
+  warning:    #ffc409,
+  danger:     #eb445a,
+  dark:       #222428,
+  medium:     #92949c,
+  light:      #f4f5f8
+);
+
+:root {
+  --ion-color-primary: #4CAF50;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #43a047;
+  --ion-color-primary-tint: #66bb6a;
+}
+
+// Utility classes
+.app-main {
+  min-height: 100vh;
+}
+
+.card-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chart-bar {
+  display: flex;
+  gap: 8px;
+  align-items: end;
+  height: 120px;
+}
+
+.chart-bar > div {
+  background: var(--ion-color-primary);
+  width: 28px;
+  border-radius: 4px 4px 0 0;
+}

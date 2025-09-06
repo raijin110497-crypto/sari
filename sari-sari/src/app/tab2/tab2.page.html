@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inventory</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="showAdd=true">Add</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Inventory</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div *ngIf="showAdd" class="ion-padding">
+    <ion-item>
+      <ion-input placeholder="Product name" [(ngModel)]="newProduct.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Price" [(ngModel)]="newProduct.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Stock" [(ngModel)]="newProduct.stock"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Barcode (optional)" [(ngModel)]="newProduct.barcode"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="addProduct()">Save Product</ion-button>
+    <ion-button expand="block" color="medium" (click)="cancelAdd()">Cancel</ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let p of products">
+      <ion-label>
+        <h2>{{ p.name }}</h2>
+        <p>₱{{ p.price }} · Stock: {{ p.stock }} {{ p.barcode ? '·' : '' }} {{ p.barcode }}</p>
+      </ion-label>
+      <ion-button slot="end" color="primary" fill="clear" (click)="editProduct(p)">Edit</ion-button>
+      <ion-button slot="end" color="danger" fill="clear" (click)="deleteProduct(p.id)">Delete</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
