@@ -1,8 +1,8 @@
 {
-  "name": "ionic-app-base",
+  "name": "sari-sari",
   "version": "0.0.0",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Sari-Sari",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +11,6 @@
     "test": "ng test",
     "lint": "ng lint"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^20.0.0",
     "@angular/common": "^20.0.0",
@@ -25,7 +24,14 @@
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/camera": "^7.0.0",
+    "@capacitor-community/sqlite": "^4.0.0",
+    "jsqr": "^1.4.0",
+    "quagga": "^1.2.6"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^20.0.0",

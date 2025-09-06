@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Reports</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Daily Sales</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h2>{{ dailyTotal | currency:'PHP' }}</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      All Sales
+    </ion-list-header>
+    <ion-item *ngFor="let s of sales">
+      <ion-label>
+        <h3>{{ s.productName }} x{{ s.quantity }}</h3>
+        <p>{{ s.date | date:'short' }} — {{ s.total | currency:'PHP' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
